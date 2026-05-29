@@ -1,0 +1,27 @@
+<div class="card bg-base-100 shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+  <figure class="cursor-pointer overflow-hidden" (click)="navigate()">
+    <img
+      [src]="item().flags.png"
+      [alt]="item().flags.alt || item().name.common"
+      class="w-full h-40 object-cover hover:scale-110 transition-transform duration-300"
+    />
+  </figure>
+  <div class="card-body p-4">
+    <h2
+      class="card-title text-base cursor-pointer hover:text-primary transition-colors duration-200"
+      (click)="navigate()"
+    >
+      {{ item().name.common }}
+    </h2>
+    <div class="text-sm text-base-content/70 space-y-1 mt-1">
+      <p>
+        <span class="font-semibold text-base-content">Nombre oficial:</span>
+        {{ item().name.official }}
+      </p>
+      <p>
+        <span class="font-semibold text-base-content">Capital:</span>
+        {{ item().capital[0] || '—' }}
+      </p>
+    </div>
+  </div>
+</div>
